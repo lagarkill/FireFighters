@@ -1,8 +1,10 @@
-$('.submenu').click(function(){
-    $(this).children("ul").slideToggle();
+$('.submenu').hover(function(){
+    $(this).children("ul").slideDown();
+}, function(){
+    $(this).children("ul").slideUp();
 })
 
-$('ul').click(function(p){
+$('ul').mouseover(function(p){
     p.stopPropagation();
 })
 /*
@@ -15,3 +17,4 @@ $('.nav').click(function(p){
 /*$('#nav-button').click(function(){
     $('.nav').toggleClass('visible-nav');
 })*/
+

@@ -20,9 +20,6 @@ body{
 
 
 .containers {
-    background-image: url("../img/FirefighterFondo.jpg");
-    background-size: 100vh;
-    background-repeat: no-repeat;
     display: grid;
     grid-template-columns: 1fr;
     background: #f3f3f3;
@@ -44,14 +41,13 @@ h1 span{
     grid-template-columns: 1fr;
 }
 .banner{
-    box-shadow: 2px 2px 0 2px #222 , 0 0 0 0 #222;
-    background:rgba(247,64,64,0.12);
+    background:rgba(230,226,226);
     position: relative;
 }
 .navbar{
     background: #a5a5a5;
     padding: 0 15px;
-    box-shadow: 0 3px #222 inset, 0 -3px #222 inset;
+    box-shadow: 0 3px #222 inset;
     display: flex;
     position: relative;
     z-index:15;
@@ -119,6 +115,9 @@ h1 span{
     font-weight: bold;
     min-height: 50px;
 }
+.item-a{
+    height: 50px;
+}
 #nav-label{
     padding: 10px;
     display: flex;
@@ -132,10 +131,6 @@ h1 span{
     font-weight: bold;
     justify-content: center;
     text-decoration: none;
-    display: block;
-    height: 50px;
-}
-.nav a{
     display: flex;
     align-items: center;
 }
@@ -246,12 +241,12 @@ h1 span{
 }
 .button{
     text-align: center;
-    color: #a5a5a5;
-    background: #ce2c2c;
+    color: #fff;
+    background:#f72a2a;
+    border-radius: 5px;
     width: 35%;
     margin-left: 30px;
     padding: 10px;
-    box-shadow:2px 2px 2px 1px #222, -2px -2px 3px 1px #222, 0 0 0 2px #222;
 }
 /* SERVICES ############################################################*/
 .main-services{
@@ -445,7 +440,6 @@ h1 span{
         margin: 0;
         width: 140px;
         position: absolute;
-        padding: 5px 20px;
         background: #fff;
         left: 0;
         top: 50px;
@@ -460,6 +454,7 @@ h1 span{
         justify-content: center;
     }
     .bomber-div h1{
+        color: inherit;
         box-shadow: none;
         height: 100%;
         background: #fff;
@@ -471,12 +466,20 @@ h1 span{
     }
     .bomber-logo{
         margin-top: 3px;
-        box-shadow: 2px 2px #ce2c2c, -2px -2px, 0 0 0px 2px;
+        box-shadow: 3px 3px #ce2c2c, -3px -3px #222, 1px 1px 0px 2px #ce2c2c, 
+        -1px -1px 0 2px #222;
         display: flex;
         position: relative;
         width: 200px;
         height: 80px;
         background: #fff;
+        transition: all 1s;
+    }
+    .bomber-logo:hover{
+        box-shadow: -3px -3px #ce2c2c, 3px 3px #222, 1px 1px 0px 2px #222, 
+        -1px -1px 0 2px #ce2c2c;
+        color: #8a7e7e;
+        cursor: pointer;
     }
     .bomber-logo::after{
         position: absolute;
@@ -501,17 +504,24 @@ h1 span{
         )
        
     }
-    .item{
+    .item , .item2{
         transition: all 1s;
         width: 140px;
         border-top: solid 2px #ce2c2c;
-        box-shadow: 0 -2px #222 inset;
+    }
+    .item2{
+        border-top: solid 1px #222;
+    }
+    .nav-2 a{
+        padding: 10px;
+        min-height: 50px;
+        max-height: 100px;
     }
     .item a{
         display: block;
         padding-top: 15px;
     }
-    .item:hover {
+    .item:hover , .item2:hover {
         cursor: pointer;
         box-shadow: -140px 0 #ce2c2c inset,
         140px 0 #ce2c2c inset;
@@ -540,11 +550,26 @@ h1 span{
         padding: 5px;
         height: 100%;
     }
+    .fa-credit-card{
+        padding: 6px 3px 5px 4px;
+    }
     .icons-bar{
         color:white;
         background: #ce2c2c;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
+    }
+    .icons-time{
+        display: flex;
+    }
+    .icons-time i{
+        font-size: 25px;
+        padding: 5px;
+    }
+    .icons-time p, .icons-time span{
+        padding: 10px;
+        margin: 0;
+        font-size: 14px;
     }
 
     .services{
@@ -568,12 +593,13 @@ h1 span{
     }
     /*SLIDER ##########################################*/
     .slider-caption{
-        padding-top: 15%;
+        padding-top: 10%;
         color: #d6d4d4;
         position:absolute;
         width: 95vw;
         top:0;
         padding-left: 15%;
+        padding-right: 15%;
         text-shadow:1px 2px 1px #222
     }
     .slider-caption p{
@@ -581,14 +607,13 @@ h1 span{
         margin: 0;
     }
     .slider-caption-button{
-        color: #a5a5a5;
+        color: #fff;
         margin-top: 40px;
         width: 30%;
         padding: 20px;
         text-align: center;
-        background:#ce2c2c;
-        text-shadow: none;
-        box-shadow: 2px 2px 2px 1px #222, -2px -2px 3px 1px #222, 0 0 0 2px #222;
+        background:#f72a2a;
+        border-radius: 5px;
     }
     .slider-item{
         position: relative;
@@ -604,19 +629,29 @@ h1 span{
         width: 100%;
     }
 
-    .service-div{margin-top: 100px;
+    .service-div{
+        margin-top: 100px;
+        margin-left: 10%;
         border-top-right-radius: 15px;
         width: 35%;
     }
     .containers{
         background: #fff;
     }
-    .main{
-        box-shadow: 0px -3px #222;
-    }
     .presentation{
         box-shadow: 0 2px 2px 0 #222;
         background: #e6e2e2;
+    }
+    .footer{
+        display: flex;
+        justify-content: space-between;
+        padding: 40px 60px;
+    }
+    .footer-ul{
+        padding: 30px 0;
+    }
+    .footer-li{
+        padding: 7px 0;
     }
 }
 
@@ -632,7 +667,7 @@ h1 span{
         font-size: .8rem;
     }
     .news{
-        height: 600px;
+        height: 800px;
         font-size: 1.4rem;
     }
     .button{
@@ -642,7 +677,11 @@ h1 span{
     }
     .contact-div .caption{
         top:80px;
-        padding-left: 40px;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .icons-time p, .icons-time span{
+        font-size: 1em;
     }
 }
 
