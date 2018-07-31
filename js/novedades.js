@@ -27,16 +27,17 @@ const create = (news)=>{
     news.forEach((element)=>{
         htmlTemplate += `
         <section class="new-principal">
-            <img class="new-img" src="${element.img}" alt="medio ambiente" srcset="">
+            <img class="new-img" src="${element.img}" alt="medio ambiente">
             <h2>${element.tittle}</h2>
             <p>${element.p}</p>
         </section>
         <div class="divisor">
-            <img class="divisor-img" src="${element.imgDivisor}" alt="divisor" srcset="">
+            <img class="divisor-img" src="${element.imgDivisor}" alt="divisor">
         </div>
         `
     })
-    document.getElementById("new-principal").innerHTML = htmlTemplate;
+    
+    document.getElementById('new-principal').innerHTML = htmlTemplate;
 }
 
 create(news);
