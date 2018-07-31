@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div class="container">
+        <form class="login-form">
+            <div class="form-principal">
+            <div class="bomber-div">
+                <div class="logo-div bomber-logo">
+                    <img class="bomber-img" src="img/IMG-20180713-WA0007 - copia.jpg" alt="" srcset="">
+                    <h1>P.C.I.</h1>
+                </div>
+            </div>
+
+            
+                <div class="text-styles">
+                    <div class="text-container">
+                        <input class="text" id="user" type="text">
+                        <label class="text-label" for="user">Usuario</label>
+                    </div>
+
+                    <div class="text-container">
+                        <input class="text" id="passwd" type="text">
+                        <label class="text-label" for="passwd">Contraseña</label>
+                    </div>
+
+                    <!--<div class="text-container">
+                        <input class="text" id="email" type="text">
+                        <label class="text-label" for="email">Correo</label>
+                    </div>-->
+
+                    <input type="file" id="fileToLoad" style="display:none">
+                </div>
+                <div class="button">
+                    Entrar
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="js/user.js"></script>
+    <script>
+
+        const makeid = ()=>{
+
+            let text = "";
+            let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        
+            for (var i = 0; i < 8; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+        
+            return text;
+        }
+
+
+        const user = document.getElementById('user').value;
+
+        const passwd = document.getElementById('passwd').value;
+        function getDirName(e)
+            {
+                if(e === null) return '/';
+
+                if(e.indexOf("/") !== -1)
+                {
+                    e = e.split('/')            //break the string into an array
+                    e.pop()                     //remove its last element
+                    e= e.join('/')              //join the array back into a string
+                    if(e === '')
+                        return '/';
+                    return e;
+                }
+
+                return "/";
+            }
+
+        function getAsText() {
+            
+           
+            console.log( getDirName('js/token.js'))
+
+            document.getElementById("fileToLoad").value = '../js/token.js';
+
+            var fileToLoad = document.getElementById("fileToLoad").files[0];
+
+            console.log(document.getElementById("fileToLoad").value);
+            
+            var reader = new FileReader();
+
+            // Read file into memory as UTF-16
+            reader.readAsText(fileToLoad, "UTF-16");
+
+            // Handle progress, success, and errors
+            reader.onprogress = updateProgress;
+            reader.onload = loaded;
+            reader.onerror = errorHandler;
+
+            debugger
+
+        }
+        getAsText();
+        
+        const admin = ()=>{
+            if(user && password){
+                if(user === login.name && password === login.password){
+                    localStorage.setItem("token", makeid());
+                    loadFileAsText();
+                }
+            }
+        }
+        
+        
+    </script>
+</body>
+</html>

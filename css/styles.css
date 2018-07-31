@@ -45,7 +45,7 @@ h1 span{
     position: relative;
 }
 .navbar{
-    background: #a5a5a5;
+    background: #fff;
     padding: 0 15px;
     box-shadow: 0 3px #222 inset;
     display: flex;
@@ -60,23 +60,23 @@ h1 span{
     transition: all .4s;
     z-index: 200;
     padding: 0;
-    background:#ff0000;
+    background:#e83f16;
     margin: 0;
     width: 100%;
     transform: translateX(-100%);
     list-style: none;
     display: block;
     position: absolute;
-    top: 90px;
+    top: 100%;
     left: 0%;
 }
 .label-img{
     z-index: 200;
-    background: #ff0000;
+    background: #e84d28;
     height: 60px;
     width: 60px;
     border: 3px solid #fff;
-    border-radius: 10px;
+    border-radius: 5px;
     right: 30px;
     bottom: 30px;
 }
@@ -111,9 +111,10 @@ h1 span{
 }
 .nav .item{ 
     color: #222;
-    text-align: center;
+    text-align: start;
     font-weight: bold;
     min-height: 50px;
+    padding-left: 10px;
 }
 .item-a{
     height: 50px;
@@ -125,11 +126,16 @@ h1 span{
 }
 .submenu{
     padding-top: 15px;
+    padding-left: 0!important;
+    text-align:start;
+}
+.submenu span{
+    padding-left: 10px;
 }
 .nav a{
     color: #222;
     font-weight: bold;
-    justify-content: center;
+    justify-content: flex-start;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -155,7 +161,7 @@ h1 span{
 /* MAIN #########################################################*/
 
 .main{
-    background: #a5a5a5;
+    background: #fff;
     padding-top: 20px;
     padding-bottom: 40px;
     display: grid;
@@ -167,6 +173,7 @@ h1 span{
 
 .cards {
     height: 400px;
+    max-width: 550px;
     display: flex;
     justify-content: center;
     margin: auto;
@@ -188,8 +195,9 @@ h1 span{
     padding: 20px;
 }
 .cards-button{
+    color: #fff;
     background:#ce2c2c;
-    box-shadow: 2px 2px, -2px -2px, 0 0 0px 2px;
+    box-shadow: 1px 1px, 0px -1px, 0 0 0px 1px;
     padding: 10px;
     cursor: pointer;
     line-height: 20px;
@@ -197,12 +205,17 @@ h1 span{
     height: 10%;
     margin-bottom: 10px;
 }
+.slider-caption-button:hover , .cards-button:hover, .button:hover{
+    background: #960909;
+    color: #e0d0d0;
+    cursor: pointer;
+}
 .cards-img , .cards-p , .cards-button{
     flex: none;
 }
 .cards-news{
     margin-top: 20px;
-    color: #a5a5a5;
+    color: #dcd9d9;
     background: #560e0e;
     box-shadow: 2px 2px 2px 1px #222, -2px -2px 3px 1px #222, 0 0 0 2px #222;
 }
@@ -212,7 +225,7 @@ h1 span{
 }
 .news{
     padding: 30px 0;
-    background: #a5a5a5;
+    background: #fff;
     width: 100%;
     height: 300px;
 }
@@ -338,13 +351,36 @@ h1 span{
 .slider-item h1 , .slider-item p {
     display: absolute;
 }
+.slider-caption{
+    padding-top: 20%;
+    color: #d6d4d4;
+    position:absolute;
+    width: 95vw;
+    top:0;
+    padding-left: 15%;
+    padding-right: 15%;
+    text-shadow:1px 2px 1px #222
+}
+.slider-caption p{
+    padding:0;
+    margin: 0;
+}
+.slider-caption-button{
+    color: #fff;
+    margin-top: 40px;
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    background:#f72a2a;
+    border-radius: 5px;
+}
 
 /* FOOTER ##########################################*/
 
 .footer{
     padding: 30px;
     color: #fff;
-    width: 100%;
+    width: 100vw;
     background: #231515;
 }
 .footer h2{
@@ -365,6 +401,9 @@ h1 span{
     display: block;
     color: #940404;
     width: 100%;
+}
+.footer-div{
+    padding: 0 25px;
 }
 
 @media screen and (min-width:34em){
@@ -393,6 +432,18 @@ h1 span{
     }
     .bomber-logo h1{
         margin-left: 15px;
+    }
+    .item2{
+        padding: 15px;
+        background: #d82020;
+        color: #e2d6d6; 
+        border-top: solid #b91818 0.001em;
+    }
+    .item2 a{
+        color: inherit;
+    }
+    .item{
+        border:solid #b91818 .001em;
     }
 }
 @media screen and (min-width:48em){
@@ -481,30 +532,9 @@ h1 span{
         color: #8a7e7e;
         cursor: pointer;
     }
-    .bomber-logo::after{
-        position: absolute;
-        height: 90px;
-        width: 210px;
-        top:-5px;
-        left: -5px;
-        z-index: -1;
-        background-image:
-        linear-gradient(
-            90deg ,
-            transparent 30px,
-            #fff 30px,
-            #fff 180px,
-            transparent 180px
-        ),
-         linear-gradient(
-            #222 30px,
-            #fff 30px,
-            transparent 60px,
-            #222 60px
-        )
-       
-    }
+  
     .item , .item2{
+        text-align: center!important;
         transition: all 1s;
         width: 140px;
         border-top: solid 2px #ce2c2c;
@@ -532,9 +562,9 @@ h1 span{
         color:white;
     }
     .submenu{
-            padding-top: 15px;
-            position: relative;
-        }
+        padding-top: 15px;
+        position: relative;
+    }
     /*HEADER ICONS ########################*/
     .icons{
         padding: 5px;
@@ -574,6 +604,7 @@ h1 span{
 
     .services{
         background: #f3eeee;
+        max-width: 355px;
         transition: all 1s;
     }
     .services-img , .services div{
@@ -593,7 +624,7 @@ h1 span{
     }
     /*SLIDER ##########################################*/
     .slider-caption{
-        padding-top: 10%;
+        padding-top: 15%;
         color: #d6d4d4;
         position:absolute;
         width: 95vw;
@@ -631,7 +662,7 @@ h1 span{
 
     .service-div{
         margin-top: 100px;
-        margin-left: 10%;
+        margin-left: 5%;
         border-top-right-radius: 15px;
         width: 35%;
     }
@@ -661,6 +692,7 @@ h1 span{
         grid-gap: 0;
     }
     .cards-news{
+        max-width: 355px;
         margin-top: 40px;
     }
     .cards-p{
@@ -686,7 +718,7 @@ h1 span{
 }
 
 @media screen and (min-width:70em){
-    .main , .icons-bar{
+    .icons-bar{
         padding: 0 10%;
     }
     .presentation{
@@ -707,5 +739,25 @@ h1 span{
     .bomber-logo h1{
         margin-left: 15px;
     }
+    .contact-div .caption{
+        padding-top: 30px;
+        font-size: .7em; 
+        padding-right: 30px;
+    }
+    .slider-caption p{
+        font-size: .7em;
+    }
 }
-
+@media screen and (max-width:25em){
+    .cards-p{
+        font-size: .7em!important;
+    }
+    .contact-div .caption{
+        padding-top: 30px;
+        font-size: .7em;
+        padding-right: 30px;
+    }
+    .slider-caption p{
+        font-size: .7em;
+    }
+}

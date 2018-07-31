@@ -4,7 +4,11 @@ $('.submenu').hover(function(){
     $(this).children("ul").slideUp();
 })
 
-$('ul').mouseover(function(p){
+$('.submenu').click(function(){
+    $(this).children("ul").slideToggle()
+})
+
+$('ul').click(function(p){
     p.stopPropagation();
 })
 /*
