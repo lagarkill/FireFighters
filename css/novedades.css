@@ -55,3 +55,9 @@ body{
 .containers{
     background: none;
 }
+
+/* Time ######################################*/
+
+#myIframe h3{
+    display: none!important;
+}

@@ -144,6 +144,15 @@ h1 span{
 #nav-button:checked ~ .nav{
     transform: translateX(0);
 }
+
+/* Menu Sticky ################################################## */
+
+.menu-fixed {
+    position: fixed!important;
+    box-shadow: 2px 2px;
+    background: #fff!important;
+}
+
 /* PRESENTATION ################################################*/
 .presentation{
     text-align: center;
@@ -202,7 +211,6 @@ h1 span{
     cursor: pointer;
     line-height: 20px;
     font-size: .9em;
-    height: 10%;
     margin-bottom: 10px;
 }
 .slider-caption-button:hover , .cards-button:hover, .button:hover{
@@ -417,9 +425,10 @@ h1 span{
     }
 }
 
-@media screen and (max-width:48em){
+@media screen and (max-width:767px){
     .header{
-        height: 600px;
+        height: 500px;
+        grid-template-rows: 1fr 4fr !important;
     }
     .icons-bar{
         display: none;
@@ -447,6 +456,9 @@ h1 span{
     }
 }
 @media screen and (min-width:48em){
+    .caption p{
+        padding-right: 20px;
+    }
     .main{
         background: #fff;
         grid-template-columns: 1fr 1fr;
@@ -475,7 +487,7 @@ h1 span{
     .nav{
         position: relative;
         display: flex;
-        height: 100%;
+        height: 52px;
         background: none;
         transform: none;
         top: 0;
@@ -499,7 +511,7 @@ h1 span{
         display: none;
     }
     .header{
-        grid-template-rows: 40px 2fr 7fr;
+        grid-template-rows: 40px 2fr 500px;
     }
     .bomber-div{
         justify-content: center;
@@ -553,6 +565,11 @@ h1 span{
     }
     .item:hover , .item2:hover {
         cursor: pointer;
+        box-shadow: -140px 0 #ce2c2c inset,
+        140px 0 #ce2c2c inset;
+        color: white;
+    }
+    .active{
         box-shadow: -140px 0 #ce2c2c inset,
         140px 0 #ce2c2c inset;
         color: white;
@@ -714,6 +731,21 @@ h1 span{
     }
     .icons-time p, .icons-time span{
         font-size: 1em;
+    }
+    .caption-container{
+        margin-top: 10%;
+    }
+    
+}
+@media screen and (max-width:60em){
+    .header{
+        grid-template-rows: 40px 2fr 400px;
+    }
+    .slider-caption{
+        padding-top: 10%;
+    }
+    .caption p{
+        padding-right: 20px;
     }
 }
 
